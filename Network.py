@@ -70,7 +70,7 @@ class Network:
                         self.layers[layer_index].bias, model.layers[layer_index].bias)
 
             for layer in self.layers:
-                if type(self.layers[layer_index]) == ActivationLayer:
+                if type(layer) == ActivationLayer:
                     continue
                 layer.weights = np.divide(layer.weights, numThreads)
                 layer.bias = np.divide(layer.bias, numThreads)
