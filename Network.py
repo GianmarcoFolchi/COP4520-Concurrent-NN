@@ -36,13 +36,13 @@ class Network:
         return result
 
     # train the network
+    # TODO: Switch from the threading library to the multiprocessing library as it is better for these type of problems 
     def fit(self, x_train, y_train, epochs, learning_rate, numThreads):
         models_lock = threading.Lock()
 
         for i in range(epochs):
             thread_models = [None] * numThreads  # Shared resource
             avg_error = [0]  # Shared resource
-
             samples_per_thread = len(x_train) // numThreads
             threads = []
             for thread in range(numThreads):
