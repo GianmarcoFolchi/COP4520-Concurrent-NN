@@ -1,6 +1,7 @@
 # COP4520-Project-1
 ## How to run: 
 Run the following command to install all dependencies `pip install -r requirements.txt`
+
 Execute the XOR.py file for a sample run. 
 
 ## Introduction
