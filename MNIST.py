@@ -41,7 +41,7 @@ net.add(ActivationLayer(tanh, tanh_prime))
 # train on 1000 samples
 # as we didn't implemented mini-batch GD, training will be pretty slow if we update at each iteration on 60000 samples...
 net.use(mse, mse_prime)
-net.fit(x_train[0:1000], y_train[0:1000], epochs=35, learning_rate=0.1, numThreads=25)
+net.fit(x_train[0:1000], y_train[0:1000], total_epochs=35, learning_rate=0.1, numThreads=25)
 
 # test on 3 samples
 out = net.predict(x_test[0:3])
