@@ -1,10 +1,10 @@
 import copy
 import threading
 import numpy as np
-from ActivationLayer import ActivationLayer
+from activationLayer import ActivationLayer
 
 
-class Network:
+class Model:
     def __init__(self):
         self.layers = []
         self.loss = None
@@ -36,7 +36,7 @@ class Network:
         return result
 
     # train the network
-    # TODO: Switch from the threading library to the multiprocessing library as it is better for these type of problems 
+    # TODO: Switch from the threading library to the multiprocessing library as it is better for these type of problems
     def fit(self, x_train, y_train, epochs, learning_rate, numThreads):
         models_lock = threading.Lock()
 
@@ -62,7 +62,7 @@ class Network:
             self.layers = thread_models[0].layers
             for model in thread_models[1:]:
                 for layer_index in range(len(self.layers)):
-                    if type(self.layers[layer_index]) == ActivationLayer: 
+                    if type(self.layers[layer_index]) == ActivationLayer:
                         continue
                     self.layers[layer_index].weights = np.add(
                         self.layers[layer_index].weights, model.layers[layer_index].weights)
@@ -94,4 +94,3 @@ def updateModelParams(model, thread_models, thread, samples_per_thread, x_train,
     with models_lock:
         thread_models[thread] = model
         avg_error[0] += err
-    

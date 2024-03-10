@@ -1,15 +1,14 @@
 import numpy as np
 
-from Network import Network
-from FullyConnectedLayer import FCLayer
-from ActivationLayer import ActivationLayer
-from ActivationFunctions import tanh, tanh_prime
-from LossFunctions import mse, mse_prime
+from model import Model
+from fullyConnectedLayer import FCLayer
+from activationLayer import ActivationLayer
+from activationFunctions import tanh, tanh_prime
+from lossFunctions import mse, mse_prime
 
 from keras.datasets import mnist
 from keras.utils import to_categorical
 
-# load MNIST from server
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 # training data : 60000 samples
@@ -28,7 +27,7 @@ x_test /= 255
 y_test = to_categorical(y_test)
 
 # Network
-net = Network()
+net = Model()
 # input_shape=(1, 28*28)    ;   output_shape=(1, 100)
 net.add(FCLayer(28*28, 100))
 net.add(ActivationLayer(tanh, tanh_prime))
