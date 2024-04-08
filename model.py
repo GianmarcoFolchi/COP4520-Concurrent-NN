@@ -3,7 +3,7 @@ import copy
 import numpy as np
 import multiprocessing
 
-from activationLayer import ActivationLayer
+from ActivationLayer import ActivationLayer
 
 # https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65 
 class Model:

@@ -1,4 +1,4 @@
-from layer import Layer
+from Layer import Layer
 import numpy as np
 
 class FCLayer(Layer):
