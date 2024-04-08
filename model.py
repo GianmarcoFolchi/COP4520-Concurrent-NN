@@ -29,7 +29,6 @@ class Model:
 
         return result
 
-    # TODO: Switch from the threading library to the multiprocessing library as it is better for these type of problems
     def fit(self, x_train, y_train, total_epochs, learning_rate, use_multiple_threads=True):
         self.set_arguments_as_class_attributes(
             x_train, y_train, total_epochs, learning_rate, use_multiple_threads)

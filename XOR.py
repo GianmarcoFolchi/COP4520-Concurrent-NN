@@ -19,7 +19,6 @@ net.add(ActivationLayer(tanh, tanh_prime))
 
 # train
 net.use(mse, mse_prime)
-# Since there are only 4 training samples, numThreads must be less than or equal to that
 net.fit(x_train, y_train, total_epochs=1000,
         learning_rate=0.1, use_multiple_threads=True)
 # test
