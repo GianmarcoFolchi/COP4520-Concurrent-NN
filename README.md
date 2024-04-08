@@ -1,8 +1,8 @@
 # COP4520-Project-1
 ## How to run: 
-Make sure to have numpy installed as it is the only dependency in this project. 
-Execute the XOR.py file for a sample run. 
+Run the following command to install all dependencies `pip install -r requirements.txt`
 
+Execute the XOR.py file for a sample run. 
 
 ## Introduction
 
