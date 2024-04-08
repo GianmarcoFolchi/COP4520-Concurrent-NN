@@ -1,5 +1,5 @@
 import numpy as np
-
+import time 
 from model import Model
 from fullyConnectedLayer import FCLayer
 from activationLayer import ActivationLayer
@@ -19,8 +19,10 @@ net.add(ActivationLayer(tanh, tanh_prime))
 
 # train
 net.use(mse, mse_prime)
+start_time = time.time()
 net.fit(x_train, y_train, total_epochs=1000,
         learning_rate=0.1, use_multiple_threads=True)
+print("--- %s seconds ---" % (time.time() - start_time))
 # test
 out = net.predict(x_train)
 print(out)
