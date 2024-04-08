@@ -34,9 +34,6 @@ def main():
     # input_shape=(1, 50) -> output_shape=(1, 10)
     net.add(FCLayer(50, 10))
     net.add(ActivationLayer(tanh, tanh_prime))
-
-    # train on 1000 samples
-    # as we didn't implemented mini-batch GD, training will be pretty slow if we update at each iteration on 60000 samples...
     net.use(mse, mse_prime)
     start_time = time.time()
     net.fit(
@@ -48,7 +45,6 @@ def main():
     )
     print("--- %s seconds ---" % (time.time() - start_time))
 
-    # test on 3 samples
     out = net.predict(x_test[0:3])
     print("\n")
     print("predicted values : ")

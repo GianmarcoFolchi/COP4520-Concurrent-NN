@@ -5,7 +5,6 @@ import multiprocessing
 
 from ActivationLayer import ActivationLayer
 
-# https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65 
 class Model:
     def __init__(self):
         self.layers = []

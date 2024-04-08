@@ -1,3 +1,4 @@
+import time
 import numpy as np
 import multiprocessing
 
@@ -17,6 +18,7 @@ def main():
     model.add(FCLayer(3, 1))
     model.add(ActivationLayer(tanh, tanh_prime))
     model.use(mse, mse_prime)
+    start_time = time.time()
     model.fit(
         x_train,
         y_train,
@@ -24,6 +26,7 @@ def main():
         learning_rate=0.1,
         use_multiple_threads=True,
     )
+    print("--- %s seconds ---" % (time.time() - start_time))
     out = model.predict(x_train)
     print(out)
 
