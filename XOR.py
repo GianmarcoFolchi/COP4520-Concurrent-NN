@@ -26,7 +26,7 @@ def main():
         learning_rate=0.1,
         use_multiple_threads=True,
     )
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("Model training with the multiprocessing library took %s seconds" % (time.time() - start_time))
     out = model.predict(x_train)
     print(out)
 
