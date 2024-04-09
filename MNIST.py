@@ -38,8 +38,8 @@ net.add(ActivationLayer(tanh, tanh_prime))
 net.use(mse, mse_prime)
 start_time = time.time()
 net.fit(
-    x_train[0:1000],
-    y_train[0:1000],
+    x_train[0:500],
+    y_train[0:500],
     total_epochs=100,
     learning_rate=0.1,
     use_multiple_threads=True,

@@ -21,8 +21,8 @@ net.add(ActivationLayer(tanh, tanh_prime))
 net.use(mse, mse_prime)
 start_time = time.time()
 net.fit(x_train, y_train, total_epochs=1000,
-        learning_rate=0.1, use_multiple_threads=True)
-print("--- %s seconds ---" % (time.time() - start_time))
+        learning_rate=0.1, use_multiple_threads=False)
+print("Model training with the threading library took %s seconds " % (time.time() - start_time))
 # test
 out = net.predict(x_train)
 print(out)

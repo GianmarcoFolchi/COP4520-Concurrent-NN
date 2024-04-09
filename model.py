@@ -111,3 +111,4 @@ class Model:
                 continue
             layer.weights = np.divide(layer.weights, self.num_threads)
             layer.bias = np.divide(layer.bias, self.num_threads)
+            
